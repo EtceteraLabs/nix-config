@@ -1,0 +1,3 @@
+[submodule "yrashk-nix-config"]
+	path = yrashk-nix-config
+	url = https://github.com/yrashk/nix-config
