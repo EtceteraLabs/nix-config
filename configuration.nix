@@ -19,6 +19,7 @@ let unstable = import (fetchTarball https://nixos.org/channels/nixos-unstable/ni
       ./web-server.nix
       ./email.nix
       ./gitolite.nix
+      ./backup.nix
     ];
 
   # Use the GRUB 2 boot loader.
