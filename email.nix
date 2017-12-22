@@ -22,4 +22,18 @@
     enableImap = true;
     enableImapSsl = true;
   };
+
+  systemd.slices.rspamd = {
+    description = "rspamd can sometimes grow uncontrollably";
+    before = [ "slices.target" ];
+    sliceConfig = {
+      MemoryHigh = "512M";
+      MemoryMax = "700M";
+    };
+  };
+  systemd.services.rspamd = {
+    serviceConfig = {
+      Slice = "rspamd.slice";
+    };
+  };
 }
