@@ -90,4 +90,5 @@ let unstable = import (fetchTarball https://nixos.org/channels/nixos-unstable/ni
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.09";
 
+  services.fail2ban.enable = true;
 }
