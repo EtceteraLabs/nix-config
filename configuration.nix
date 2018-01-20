@@ -20,6 +20,7 @@ let unstable = import (fetchTarball https://nixos.org/channels/nixos-unstable/ni
       ./email.nix
       ./gitolite.nix
       ./backup.nix
+      ./loginctl-linger.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -81,7 +82,7 @@ let unstable = import (fetchTarball https://nixos.org/channels/nixos-unstable/ni
 
   users.extraUsers.yrashk = import ./yrashk-nix-config/users/yrashk.nix {
     inherit config; inherit pkgs;
-  };
+  } // { linger = true; };
 
   users.mutableUsers = false;
 
